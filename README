@@ -1,0 +1,71 @@
+Cazan Bogdan Marian 323CB
+
+                            TEMA 2 POO
+                             ToyStore
+
+    Am realizat deja javadoc, gasit in arhiva. Prin urmare, acest readme este
+mai mult cu rol informativ despre rularea temei si, felul in care sunt generate
+atat fisierele csv in urma operatiei de savecsv, dar si fisierul binar din urma
+rularii lui savestore.
+    
+    Pentru inceput, in arhiva se gaseste un makefile. Pentru a testa cele 5
+rulari, se vor folosi comenzile make rulare{numar_rulare}. Numarul rularilor
+este de 5, deci make rulare6 nu exista. S-a folosit ca si fisier csv de intrare
+cel original (sample). Pentru rularea temei, este nevoie de JDK 11. 
+    
+    In urma rularii unei rulari (suna repetitiv, dar asta e) se vor obtine:
+un fisier rulare_{numar_rulare}.out, in care sunt afisate prin redirectare
+raspunsurile comenzilor primite de la stdin, de la fisierele  de forma 
+rulare_{numar_rulare}, pentru a nu pierde informatii prin trunchierea facuta de
+terminal, sau de consola de IDE, etc. Alaturi de acest fisier, pot aparea si 
+fisiere csv de forma store_{numar_rulare}. De asemenea intrucat am implementat
+si cele doua comenzi bonus, anume savestore si loadstore, va aparea eventual
+(de la rularea 3 in sus mai exact) si un fisier binar, numit binary.dat . Acest
+fisier va fi modificat de fiecare data cand se apeleaza savestore, si nu se va
+crea cate un nou fisier pentru fiecare rulare. Consider ca o incaracare cu prea
+multe fisiere este irelevanta pentru tema aceasta.
+    
+    Pentru a sterge toate fisierele generate in urma rularii, vom folosi comanda
+make clean.
+    Legat de bonusuri, am implementat tot ce s-a cerut in cadrul enuntului. Cele
+doua comenzi bonus au fost citite mai sus. Pentru citirea (mai bine spus
+parsarea) fisierului csv, cat si pentru scrierea intr-un fisier csv, am folosit
+org.apache.common.csv, deci folosirea unei biblioteci externe. De asemenea, ca 
+si design pattern suplimentar, am folosit Factory.
+    
+    Factory a fost folosit la realizarea consolei interactive: am creat o clasa
+numita Command, clasa abstracta, mostenita de diferite clase destinate prelucrarii
+unor comenzi specifice de la tastatura (de exemplu, pentru produse si producatori
+s-a folosit o clasa separata de operatiile care se pot realiza pe un discount
+sau pe un Currency, etc.).
+    In cadrul programului mai gasim si design pattern-uri pentru Discount si
+Manufacturer, insa acestea nu sunt diferite de cel cerut in cadrul temei pentru
+Product, au fost realizate cu scopul de a facilita si de a oferi transparenta
+anumitor zone din cod.
+    
+    De adaugat ar mai fi si faptul ca am creat exceptii suplimentare, pentru
+diferite parti ale programului. Initial am apelat la afisarea stackTrace-ului in
+urma aruncarii unei exceptii, dar din diferite motive, am hotarat sa las doar
+mesajul pe care il dadeam la fiecare exceptie (mai precis, motivul pentru care
+am ales aceasta abordare a fost incapacitatea sincronizarii exceptiilor cu logica
+programului; in momentul in care se dadeau mai multe comenzi de la stdin in
+acelasi timp, apareau intarzieri, iar stackTrace-ul era aruncat uneori in zone
+in care nu ar fi trebuit sa apara, de exemplu cu 10 randuri mai jos decat daca
+ar fi fost date comenzile manual, rand pe rand).
+    
+    Ca si ilegalitati prezente in cadrul programului, trebuie sa fim atenti
+atunci cand incarcam store-ul in fisier binar. Daca lista de produse sau lista
+de discount-uri sunt vide, atunci programul arunca exceptie si se va opri, pentru
+a nu lasa o asemenea greseala sa se propage. De asemenea este bine sa fim atenti
+la cazuri izolate de greseli (o comanda gresita introdusa de la tastatura, care
+desi va oferi un mesaj corespunzator si o noua incercare, ar fi bine sa nu se 
+realizeze). Un alt moment in care programul se va opri este atunci cand se va
+introduce numele unei comenzi in mod corect, dar parametrii sunt eronati.
+
+Ca si concluzie, tema este completa ca si functionalitate (120% am putea 
+spune :)), dar pot aparea diferite buguri date de anumite corner-caseuri, pe
+rulari diferite de cele create de mine, insa acest lucru se putea rezolva si prin
+prezenta unui numar mai mare de teste, care sunt foarte costisitoare (ca si
+timp) in momentul in care trebuie facute de mana.
+
+    

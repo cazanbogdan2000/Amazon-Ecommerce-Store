@@ -1,0 +1,50 @@
+addcurrency GBP £ 1.10
+setstorecurrency GBP
+loadcsv amazon_co-ecommerce_sample.csv
+getstorecurrency
+addcurrency CAD $ 0.65
+addcurrency YEN ¥ 0.05
+listcurrencies
+showproduct 7bc15b324084743b665ee3d698960ff7
+setstorecurrency YEN
+addiscount PERCENTAGE 69 "Sex day"
+getstorecurrency
+showproduct 03756123c54f2857ac841e94b9679189
+calculatetotal 03756123c54f2857ac841e94b9679189 589439323857e0142a8239f966d40a62
+updateparity YEN 0.045
+showproduct 589439323857e0142a8239f966d40a62
+listcurrencies
+showproduct 5cc7c1d1de6ea639a357bd967a9b51c6
+calculatetotal 35f493e139cf4d959ac97ad6325ab376 5cc7c1d1de6ea639a357bd967a9b51c6 241671dcac1d9bd231afd8f9351f894d
+savestore
+setstorecurrency ABC
+setstorecurrency CAD
+getstorecurrency
+listproducts
+listproductsbymanufacturer Kato
+listdiscounts
+addiscount PERCENTAGE 45 "45% Christmas Sale"
+addiscount PERCENTAGE 20 "20% Black Friday"
+listdiscounts
+applydiscount PERCENTAGE 20
+calculatetotal d4c236bb153de1dd4286ac31337896ab caa8b81334b935ff9e6f11b5d839eec5 67ff52712dae78a8261577042c07346a
+showproduct 8002a9451ae43b470c53f2889347406b
+listproductsbymanufacturarer Hornby
+listcurrencies
+setstorecurrency EUR
+listproductsbymanufacturer HPI Racing
+showproduct 7bc15b324084743b665ee3d698960ff7
+applydiscount PERCENTAGE 45
+calculatetotal 7bc15b324084743b665ee3d698960ff7 5cfb174ca9e0a60c1fc79a902eb6c799
+calculatetotal b206d56bdb6dcdda41c71500b316e56a d8ff946959a5d7cb6df65ae4fd15c016 f6d56c2504544875a21a7509b3905cf0
+listmanufacturers
+listproductsbymanufacturer Jouef
+getstorecurrency
+loadstore
+getstorecurrency
+showproduct 7b758d22f1116336307a466fae13a673
+showproduct 3771983ef8f14ef1b7738c31a2c05856
+applydiscount FIXED 24
+calculatetotal 26f0e95eea814ee55fdf0674142faebe 40073563dd7742ff1c290001b9bd3f8f
+savecsv store_5.csv
+exit

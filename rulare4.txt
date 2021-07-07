@@ -1,0 +1,30 @@
+addcurrency GBP £ 1.10
+setstorecurrency GBP
+loadcsv amazon_co-ecommerce_sample.csv
+addcurrency CAD $ 0.69
+listproductsbymanufacturer Hornby
+setstorecurrency CHD
+addiscount FIXED 2 "2 Winter Sale"
+savestore
+addcurrency CHF CHf 0.95
+setstorecurrency CAD
+showproduct 7a7d4d30186fdd7caadb082988b1a6a1
+showproduct 694c4bf2c97c9bc18ae4708ceed63616
+calculatetotal 9881643091416afe452fa9cf7de78458 a4130d999d80313957e11246869891f0
+listproductsbymanufacturarer NECA
+showproduct a015329569179c7775dcf5ce263330bbs
+listcurrencies
+setstorecurrency CHF
+getstorecurrency
+listproductsbymanufacturer Train Tech
+calculatetotal 7b247eff20322c26adeec347ff7bddcb 7a7d4d30186fdd7caadb082988b1a6a1 a4130d999d80313957e11246869891f0 5f2a2131a6ed73019ebe9a94fb98cacc
+addiscount PERCENTAGE 40 "40% Christmas Sale"
+listdiscounts
+applydiscount FIXED 2
+loadstore
+calculatetotal 7b247eff20322c26adeec347ff7bddcb 7a7d4d30186fdd7caadb082988b1a6a1 a4130d999d80313957e11246869891f0 5f2a2131a6ed73019ebe9a94fb98cacc
+calculatetotal 399816d9c248465f01f660495154833d ee38b8430cb505e5ef9102ae00fd2d68
+applydiscount FIXED 12
+showproduct 1e65ddc95b48bf211707ca91df150a88
+savecsv store_4.csv
+exit

@@ -1,0 +1,20 @@
+addcurrency GBP £ 1.10
+setstorecurrency GBP
+loadcsv amazon_co-ecommerce_sample.csv
+listmanufacturers
+showproduct 3bf8dcb4ebeee466db329bb425c197c0
+addiscount PERCENTAGE 23 "23% Winter Sale"
+updateparity gbp 1.09
+applydiscount PERCENTAGE 23
+calculatetotal de4912dfd110d19d8c5acc5381e2bd85 5152452656955a9bf425a11ba221f016 
+calculatetotal 5152452656955a9bf425a11ba221f016 87c2e4a5984ea5424220a3ce015f0f2f 84a973d222db05ce00fa4578e2918f14
+listcurrencies
+setstorecurrency EUR
+getstorecurrency
+showproduct 3bf8dcb4ebeee466db329bb425c197c0
+applydiscount PERCENTAGE 36
+addcurrency USD $ 0.81
+setstorecurrency USD
+listproductsbymanufacturer universal hobby
+savecsv store_3.csv
+exit

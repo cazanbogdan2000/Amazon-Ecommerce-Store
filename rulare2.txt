@@ -1,0 +1,15 @@
+loadcsv amazon_co-ecommerce_sample.csv
+listmanufacturers
+addcurrency USD $ 0.83
+listcurrencies
+listproducts
+calculatetotal e12b92dbb8eaee78b22965d2a9bbbd9f f74b562470571dfb689324adf236f82c 87bbb472ef9d90dcef140a551665c929
+addiscount PERCENTAGE 10 "Black Day"
+addcurrency GBP £ 1.09
+setstorecurrency EUR
+applydiscount PERCENTAGE 10
+savecsv store_2.csv
+addcurrency CHF Fr 0.93
+getstorecurrency
+showproduct 791719b23e393dc4a3384d4d7777c089
+quit

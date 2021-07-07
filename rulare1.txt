@@ -1,0 +1,10 @@
+loadcsv amazon_co-ecommerce_sample.csv
+addiscount PERCENTAGE 22 "Christmas day"
+showproduct 833aef8b366a8120582f992ab2b31c9f
+addiscount PERCENTAGE 10 "Sales"
+applydiscount PERCENTAGE 10
+showproduct 833aef8b366a8120582f992ab2b31c9f
+listdiscounts
+listcurrencies
+savecsv store_1.csv
+quit
